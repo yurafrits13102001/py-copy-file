@@ -14,7 +14,6 @@ def copy_file(files_names: str) -> None:
     if not os.path.exists(file1):
         return None
 
-    with open(file1, "rb") as file_1:
+    with open(file1, "rb") as file_1, open(file2, "wb") as file_2:
         data = file_1.read()
-    with open(file2, "wb") as file_2:
         file_2.write(data)
