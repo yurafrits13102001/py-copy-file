@@ -6,14 +6,14 @@ def copy_file(files_names: str) -> None:
     if len(file_list) != 3 or file_list[0] != "cp":
         return
 
-    _, file1, file2 = file_list
+    _, f1, f2 = file_list
 
-    if file1 == file2:
+    if f1 == f2:
         return
 
-    if not os.path.exists(file1):
+    if not os.path.exists(f1):
         return
 
-    with open(file1, "rb") as file_1, open(file2, "wb") as file_2:
+    with open(f1, "r") as file_1, open(f2, "w") as file_2:
         data = file_1.read()
         file_2.write(data)
