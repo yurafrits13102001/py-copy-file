@@ -11,7 +11,8 @@ def copy_file(files_names: str) -> None:
         return
 
     try:
-        with open(source_file_name, "r") as file_1, open(destination_file_name, "w") as file_2:
+        with (open(source_file_name, "r") as file_1,
+              open(destination_file_name, "w") as file_2):
             data = file_1.read()
             file_2.write(data)
     except FileNotFoundError:
