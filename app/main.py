@@ -5,13 +5,13 @@ def copy_file(files_names: str) -> None:
     if len(file_list) != 3 or file_list[0] != "cp":
         return
 
-    _, f1, f2 = file_list
+    _, source_file_name, destination_file_name = file_list
 
-    if f1 == f2:
+    if source_file_name == destination_file_name:
         return
 
     try:
-        with open(f1, "r") as file_1, open(f2, "w") as file_2:
+        with open(source_file_name, "r") as file_1, open(destination_file_name, "w") as file_2:
             data = file_1.read()
             file_2.write(data)
     except FileNotFoundError:
